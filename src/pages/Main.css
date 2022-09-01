@@ -98,20 +98,20 @@
   font-family: "Montserrat";
   font-size: 2vw;
   display: flex;
+  align-items: center;
   color: #c0ccd9;
+  gap: 15px;
 }
 
-.login__links p:last-child {
-  padding-left: 30px;
+.login__links p {
   cursor: pointer;
   transition: 0.3s;
 }
 
-.login__links p:first-child {
-  border-right: 2px solid #003165;
-  padding-right: 30px;
-  cursor: pointer;
-  transition: 0.3s;
+.login__links hr {
+  border-color: #003165;
+  width: 2px;
+  height: 70px;
 }
 
 .login__links p:hover {

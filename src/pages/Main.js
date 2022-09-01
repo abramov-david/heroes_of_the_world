@@ -41,6 +41,7 @@ const Main = () => {
         <div className="title">heroes of the world</div>
         <div className="login__links">
           <p>LOGIN</p>
+          <hr />
           <p>REGISTER</p>
         </div>
         <img src={marvel_logo} alt="Marvel_logo" id="main_marvel_logo" />
