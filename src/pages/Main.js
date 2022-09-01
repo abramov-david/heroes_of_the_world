@@ -37,13 +37,13 @@ const Main = () => {
         </div>
       </section>
       <section className="main__textBlock">
-        <img src={dc_logo} alt="Dc_logo" />
+        <img src={dc_logo} alt="Dc_logo" id="main_dc_logo" />
         <div className="title">heroes of the world</div>
         <div className="login__links">
           <p>LOGIN</p>
           <p>REGISTER</p>
         </div>
-        <img src={marvel_logo} alt="Marvel_logo" />
+        <img src={marvel_logo} alt="Marvel_logo" id="main_marvel_logo" />
       </section>
     </main>
   );
