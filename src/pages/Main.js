@@ -10,7 +10,19 @@ import index_6 from "../assets/main_page/index_6.jpg";
 import index_7 from "../assets/main_page/index_7.jpg";
 import index_10 from "../assets/main_page/index_10.jpg";
 
+import { useDispatch } from "react-redux";
+import { modalActions } from "../store/modal-slice";
+
 const Main = () => {
+  const dispatch = useDispatch();
+
+  const modalLoginHandler = () => {
+    dispatch(modalActions.showLoginModal());
+  };
+  const modalRegisterHandler = () => {
+    dispatch(modalActions.showRegisterModal());
+  };
+
   return (
     <main className="main">
       <section className="imgs">
@@ -40,9 +52,9 @@ const Main = () => {
         <img src={dc_logo} alt="Dc_logo" id="main_dc_logo" />
         <div className="title">heroes of the world</div>
         <div className="login__links">
-          <p>LOGIN</p>
+          <p onClick={modalLoginHandler}>LOGIN</p>
           <hr />
-          <p>REGISTER</p>
+          <p onClick={modalRegisterHandler}>REGISTER</p>
         </div>
         <img src={marvel_logo} alt="Marvel_logo" id="main_marvel_logo" />
       </section>

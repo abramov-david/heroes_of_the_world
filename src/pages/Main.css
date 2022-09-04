@@ -119,7 +119,7 @@
 }
 
 #main_dc_logo {
-  animation: rotate 15s ease-out infinite;
+  animation: rotate 20s ease-out infinite;
 }
 
 @keyframes rotate {
@@ -135,7 +135,7 @@
 }
 
 #main_marvel_logo {
-  animation: bump 15s ease-out infinite;
+  animation: bump 20s ease-out infinite;
 }
 
 @keyframes bump {
@@ -153,5 +153,20 @@
   }
   100% {
     transform: scale(1);
+  }
+}
+
+/* Close btn animation */
+
+.closeIcon__item:hover {
+  animation: rotate 0.5s ease-in forwards;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
   }
 }
