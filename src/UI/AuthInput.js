@@ -20,7 +20,7 @@ export default function AuthInput(props) {
   return (
     <div className={classes.input_block}>
       <label htmlFor={props.input.id}>{props.label}</label>
-      <input {...props.input} ref={inputRef} />
+      <input {...props.input} ref={inputRef} required />
     </div>
   );
 }

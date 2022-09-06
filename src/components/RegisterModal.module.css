@@ -2,14 +2,16 @@
   display: flex;
   flex-direction: column;
   gap: 40px;
+  color: var(--color-blue--light);
 }
 
 .input_block input {
   min-width: 230px;
   width: 100%;
   border: none;
-  border-bottom: 1px solid var(--color-blue--light);
-  font-size: 20px;
+  border-bottom: 1px solid rgba(28, 42, 88, 0.3);
+  font-size: 2.2rem;
+  color: var(--color-blue--light);
 }
 
 .input_block input:focus {
@@ -50,14 +52,14 @@
 
 .smallText {
   font-family: "Montserrat";
-  font-size: 15px;
+  font-size: 1.5rem;
   text-align: center;
+  padding-top: 10px;
 }
 
 .footer {
   display: flex;
   flex-direction: column;
-  color: var(--color-blue--light);
 }
 
 .imgChoose {
@@ -65,7 +67,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-size: 20px;
+  font-size: 2rem;
   color: var(--color-blue--light);
 }
 
@@ -90,4 +92,19 @@
 
 .imgChoose img:hover {
   transform: scale(1.1);
+}
+
+.form__passInput p {
+  font-family: "Montserrat";
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: rgba(28, 42, 88, 0.3);
+  padding-right: auto;
+  text-align: end;
+  padding-right: 40px;
+  width: 100%;
+}
+
+.form button {
+  margin-top: 20px;
 }

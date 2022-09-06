@@ -170,3 +170,16 @@
     transform: rotate(360deg);
   }
 }
+
+.closeIcon__item {
+  animation: rotate_back 0.5s ease-in forwards;
+}
+
+@keyframes rotate_back {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
+}

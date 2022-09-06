@@ -4,6 +4,7 @@ import Main from "./pages/Main";
 import LoginModal from "./components/LoginModal";
 import RegisterModal from "./components/RegisterModal";
 import { useSelector } from "react-redux";
+import Heroes from "./pages/Heroes";
 
 function App() {
   const isLoginModal = useSelector((state) => state.modal.isLoginModal);
@@ -15,6 +16,7 @@ function App() {
       {isLoginModal && <LoginModal></LoginModal>}
       <Routes>
         <Route path="/" element={<Main />}></Route>
+        <Route path="/heroes" element={<Heroes />}></Route>
       </Routes>
     </Fragment>
   );

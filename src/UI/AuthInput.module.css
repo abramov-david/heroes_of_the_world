@@ -8,7 +8,7 @@
 
 .input_block label {
   font-family: "Montserrat";
-  font-size: 30px;
+  font-size: 3rem;
   font-weight: 600;
   color: var(--color-blue--light);
 }

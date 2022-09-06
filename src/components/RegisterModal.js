@@ -100,7 +100,10 @@ export default function RegisterModal() {
           <div className={classes.input_block}>
             <AuthInput input={input_name_val} label="Name" queue="first" />
             <AuthInput input={input_email_val} label="Email" />
-            <AuthInput input={input_password_val} label="Password" />
+            <div className={classes.form__passInput}>
+              <AuthInput input={input_password_val} label="Password" />
+              <p>(Must be six or greater signs)</p>
+            </div>
           </div>
 
           <div className={classes.imgChoose}>

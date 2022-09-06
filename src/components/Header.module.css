@@ -1,0 +1,48 @@
+.main {
+  margin-top: 0px;
+  height: 80px;
+  background-image: linear-gradient(
+    to right,
+    var(--color-blue),
+    var(--color-red)
+  );
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 40px;
+
+  color: #ffff;
+}
+
+.main img {
+  height: 50px;
+}
+
+.links {
+  width: 40%;
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  display: flex;
+  justify-content: space-between;
+}
+
+.links a {
+  transition: 0.5s all;
+}
+
+.links a:hover {
+  transform: translateY(-5px);
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.8rem;
+}
+.profile img {
+  height: 50px;
+  background-color: #fff;
+  border-radius: 50%;
+}
