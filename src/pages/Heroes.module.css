@@ -1,0 +1,61 @@
+.main {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+.heroes {
+  padding: 20px;
+}
+
+.ully {
+  margin: 0 auto;
+  width: 100%;
+  display: grid;
+  gap: 40px;
+  justify-content: space-evenly;
+  grid-template-columns: repeat(7, 1fr);
+}
+
+@media screen and (max-width: 1600px) {
+  .ully {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
+
+@media screen and (max-width: 1300px) {
+  .ully {
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .ully {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .ully {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .ully {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 20px;
+  }
+}
+
+.scroll {
+  font-size: 15rem;
+  color: red;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

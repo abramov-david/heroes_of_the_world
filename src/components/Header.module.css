@@ -1,5 +1,7 @@
 .main {
+  position: sticky;
   margin-top: 0px;
+  top: 0px;
   height: 80px;
   background-image: linear-gradient(
     to right,
@@ -11,8 +13,10 @@
   align-items: center;
   justify-content: space-between;
   padding: 0 40px;
-
   color: #ffff;
+  z-index: 9;
+  border: 5px solid #fff;
+  transition: 0.2s all;
 }
 
 .main img {
@@ -45,4 +49,8 @@
   height: 50px;
   background-color: #fff;
   border-radius: 50%;
+}
+
+.scrolledHeader {
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }

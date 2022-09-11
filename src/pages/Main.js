@@ -2,6 +2,7 @@ import "./Main.css";
 
 import marvel_logo from "../assets/marvel_logo.png";
 import dc_logo from "../assets/dc_logo.png";
+import dark_horse_logo from "../assets/dark_horse_logo.png";
 import index_1 from "../assets/main_page/index_1.jpg";
 import index_3 from "../assets/main_page/index_3.jpg";
 import index_4 from "../assets/main_page/index_4.jpg";
@@ -49,14 +50,21 @@ const Main = () => {
         </div>
       </section>
       <section className="main__textBlock">
-        <img src={dc_logo} alt="Dc_logo" id="main_dc_logo" />
         <div className="title">heroes of the world</div>
         <div className="login__links">
           <p onClick={modalLoginHandler}>LOGIN</p>
           <hr />
           <p onClick={modalRegisterHandler}>REGISTER</p>
         </div>
-        <img src={marvel_logo} alt="Marvel_logo" id="main_marvel_logo" />
+        <div className="main__logosContainer">
+          <img src={dc_logo} alt="Dc_logo" id="main_dc_logo" />
+          <img src={marvel_logo} alt="Marvel_logo" id="main_marvel_logo" />
+          <img
+            src={dark_horse_logo}
+            alt="Dark_horse"
+            id="main_darkHorse_logo"
+          />
+        </div>
       </section>
     </main>
   );

@@ -16,6 +16,18 @@ body {
   margin: 0;
   font-family: -apple-system, "Anton", "Montserrat", sans-serif;
   font-size: 62.5%; /* 10px/16px = 62.5% -> 1rem = 10px*/
+
+  display: flex;
+  flex-direction: column;
+}
+
+body::-webkit-scrollbar {
+  width: 1em;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #40577e;
+  border-radius: 6px;
 }
 
 a {

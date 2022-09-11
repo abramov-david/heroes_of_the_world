@@ -4,10 +4,19 @@ import { Link } from "react-router-dom";
 import profile_img from "../assets/main_page/svg_reg/user_5.svg";
 import hotw_logo from "../assets/header/hotw.svg";
 
-export default function Header() {
+export default function Header(props) {
+  const classHeader =
+    props.scroll > 200
+      ? `${classes.main} ${classes.scrolledHeader}`
+      : `${classes.main}`;
+
   return (
-    <section className={classes.main}>
-      <img src={hotw_logo} alt="" />
+    <section className={classHeader}>
+      <Link to="/">
+        {" "}
+        <img src={hotw_logo} alt="" />
+      </Link>
+
       <div className={classes.links}>
         <Link to="/main">my collection</Link>
         <Link to="/heroes">heroes</Link>

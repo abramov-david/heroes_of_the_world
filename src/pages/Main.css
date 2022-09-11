@@ -21,7 +21,7 @@
 }
 
 .main__textBlock img {
-  max-height: 70px;
+  max-height: 50px;
 }
 
 .title {
@@ -118,44 +118,6 @@
   color: #003165;
 }
 
-#main_dc_logo {
-  animation: rotate_dc 20s ease-out infinite;
-}
-
-@keyframes rotate_dc {
-  0% {
-    transform: rotate(0deg);
-  }
-  5% {
-    transform: rotate(360deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-#main_marvel_logo {
-  animation: bump 20s ease-out infinite;
-}
-
-@keyframes bump {
-  0% {
-    transform: scale(1);
-  }
-  1% {
-    transform: scale(1.2);
-  }
-  2% {
-    transform: scale(0.8);
-  }
-  3% {
-    transform: scale(1);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
-
 /* Close btn animation */
 
 .closeIcon__item:hover {
@@ -182,4 +144,10 @@
   100% {
     transform: rotate(-360deg);
   }
+}
+
+.main__logosContainer {
+  display: flex;
+  align-items: center;
+  gap: 20px;
 }
