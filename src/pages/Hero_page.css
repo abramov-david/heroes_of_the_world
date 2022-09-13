@@ -1,0 +1,8 @@
+.hero_page_container {
+  height: 100vh;
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: auto;
+}

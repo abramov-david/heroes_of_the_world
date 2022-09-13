@@ -41,6 +41,7 @@ export default function Hero_card(props) {
         )}
         <p>{props.name}</p>
       </div>
+      {}
       <div className="hero-card__back-side">
         <img src={props.img} className="hero-card__hero" alt="" />
         <p>click to open</p>
