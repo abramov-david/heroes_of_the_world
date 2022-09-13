@@ -34,7 +34,9 @@ export const fetchHeroes = createAsyncThunk(
       const item = filtered_data[generateRandom(0, 439)];
       heroes_data.push(item);
     }
-    return heroes_data;
+
+    const main_data = [filtered_data, heroes_data];
+    return main_data;
   }
 );
 

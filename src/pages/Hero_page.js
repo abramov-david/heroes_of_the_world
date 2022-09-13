@@ -8,12 +8,15 @@ export default function Hero_page(props) {
   const params = useParams();
   const cur_hero_id = params.heroId;
 
-  console.log(cur_hero_id);
-  const cur_hero = heroes_fetched_data.filter((hero) => hero.id == cur_hero_id);
+  const hero_data = heroes_fetched_data[0]?.map((item) => item);
+
+  const cur_hero = hero_data?.filter((hero) => hero.id == cur_hero_id);
+
+  console.log(hero_data);
   console.log(cur_hero);
   return (
     <div className="hero_page_container">
-      <h1>Hero page</h1>
+      <h1>Hero {cur_hero ? cur_hero[0].name : ""} page</h1>
     </div>
   );
 }

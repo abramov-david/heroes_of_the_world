@@ -9,9 +9,11 @@ export default function Heroes(props) {
   const heroes_fetched_data = useSelector((state) => state.heroes.heroes_data);
   const loadingStatus = useSelector((state) => state.heroes.isLoading);
 
-  const heroes_cards = heroes_fetched_data.map((item, i) => {
+  console.log(heroes_fetched_data);
+
+  const heroes_cards = heroes_fetched_data[1]?.map((item, i) => {
     return (
-      <Link to={`/heroes/${item.id}`} key={item.id}>
+      <Link to={`/heroes/${item.id}`} key={item.id + Math.random()}>
         <Hero_card
           key={i}
           img={item.images.lg}
