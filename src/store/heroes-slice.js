@@ -30,7 +30,7 @@ export const fetchHeroes = createAsyncThunk(
 
     const heroes_data = [];
 
-    for (let index = 0; index < 100; index++) {
+    for (let index = 0; index < 49; index++) {
       const item = filtered_data[generateRandom(0, 439)];
       heroes_data.push(item);
     }
