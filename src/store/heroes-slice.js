@@ -5,44 +5,48 @@ const API_URL = "https://akabab.github.io/superhero-api/api/all.json";
 
 export const fetchHeroes = createAsyncThunk(
   "data_slice/fetchHeroes",
-  async function () {
-    const res = await fetch(API_URL);
-    if (!res.ok) {
-      throw new Error("Could not fetch cart data!");
+  async function (_, { rejectWithValue }) {
+    try {
+      const res = await fetch(API_URL);
+      if (!res.ok) {
+        throw new Error("Could not fetch cart data!");
+      }
+      const data = await res.json();
+
+      const marvel_heroes = data.filter(
+        (item) => item.biography.publisher == "Marvel Comics"
+      );
+      const dark_horse_heroes = data.filter(
+        (item) => item.biography.publisher == "Dark Horse Comics"
+      );
+      const dc_heroes = data.filter(
+        (item) => item.biography.publisher == "DC Comics"
+      );
+
+      const filtered_data = [
+        ...marvel_heroes,
+        ...dark_horse_heroes,
+        ...dc_heroes,
+      ];
+
+      const heroesData = [];
+
+      for (let index = 0; index < 49; index++) {
+        const item = filtered_data[generateRandom(0, 439)];
+        heroesData.push(item);
+      }
+
+      const main_data = [filtered_data, heroesData];
+      return main_data;
+    } catch (error) {
+      return rejectWithValue(error.message);
     }
-    const data = await res.json();
-
-    const marvel_heroes = data.filter(
-      (item) => item.biography.publisher == "Marvel Comics"
-    );
-    const dark_horse_heroes = data.filter(
-      (item) => item.biography.publisher == "Dark Horse Comics"
-    );
-    const dc_heroes = data.filter(
-      (item) => item.biography.publisher == "DC Comics"
-    );
-
-    const filtered_data = [
-      ...marvel_heroes,
-      ...dark_horse_heroes,
-      ...dc_heroes,
-    ];
-
-    const heroes_data = [];
-
-    for (let index = 0; index < 49; index++) {
-      const item = filtered_data[generateRandom(0, 439)];
-      heroes_data.push(item);
-    }
-
-    const main_data = [filtered_data, heroes_data];
-    return main_data;
   }
 );
 
 const heroesSlice = createSlice({
   name: "data_slice",
-  initialState: { heroes_data: [], isLoading: false, error: null },
+  initialState: { heroes_data: [], isLoading: null, error: null },
 
   extraReducers: {
     [fetchHeroes.pending]: (state) => {
@@ -55,6 +59,7 @@ const heroesSlice = createSlice({
     [fetchHeroes.rejected]: (state) => {
       state.isLoading = false;
       state.error = "Something go wrong!";
+      alert("aaa");
     },
   },
 });

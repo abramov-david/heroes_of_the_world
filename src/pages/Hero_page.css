@@ -11,8 +11,9 @@
 }
 .hero-page__header {
   width: 100%;
-  height: 30rem;
+  height: 40rem;
   position: relative;
+  overflow: hidden;
 }
 
 .hero-page__biography__img {
@@ -34,11 +35,12 @@
 }
 
 .hero-page__title {
+  font-size: 3rem;
   font-family: "montserrat";
   position: absolute;
   text-transform: uppercase;
-  right: 5rem;
-  top: 2rem;
+  right: 10rem;
+  top: 5rem;
   color: whitesmoke;
   padding: 0 5rem;
   border-radius: 10px;
@@ -47,4 +49,46 @@
     rgba(3, 118, 242, 0.4),
     rgba(240, 20, 30, 0.8)
   );
+}
+
+.hero-page__align {
+  position: absolute;
+  top: 5rem;
+  right: 2rem;
+}
+
+.hero-page__publisher {
+  position: absolute;
+  bottom: 0;
+  right: 2rem;
+}
+
+.hero-page__dc-publisher {
+  height: 50px;
+  width: 50px;
+}
+
+.hero-page__marvel-publisher {
+  width: 100px;
+}
+
+.hero-dark-publisher {
+  height: 80px;
+}
+
+.hero-page__biography--wrapper {
+  animation: scaling 70s ease-in-out infinite;
+  max-width: 100%;
+}
+
+@keyframes scaling {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
