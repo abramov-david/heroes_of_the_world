@@ -53,10 +53,12 @@
 
 .hero-page__align {
   position: absolute;
-  top: 5rem;
-  right: 2rem;
+  top: 7rem;
+  right: 5rem;
 }
-
+.hero-page__align img {
+  width: 100px;
+}
 .hero-page__publisher {
   position: absolute;
   bottom: 0;

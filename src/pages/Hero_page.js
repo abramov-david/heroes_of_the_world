@@ -13,6 +13,8 @@ import { animated } from "react-spring";
 
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import Loading from "../components/Loading";
+import ErrorFetchPage from "../components/ErrorFetchPage";
 
 import { useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
@@ -22,8 +24,33 @@ export default function Hero_page(props) {
   const { style, ...mouseHandlers } = use3dEffect(ref);
 
   const heroes_fetched_data = useSelector((state) => state.heroes.heroes_data);
+  const loadingStatus = useSelector((state) => state.heroes.isLoading);
+  const errorStatus = useSelector((state) => state.heroes.error);
+
   const params = useParams();
   const cur_hero_id = params.heroId;
+
+  if (!heroes_fetched_data.length > 0) {
+    if (loadingStatus) {
+      return (
+        <div className="hero-page">
+          <Header scroll={props.scroll} />
+          <Loading />
+          <Footer />
+        </div>
+      );
+    }
+    if (errorStatus) {
+      return (
+        <div className="hero-page">
+          <Header scroll={props.scroll} />
+          <ErrorFetchPage />
+          <Footer />
+        </div>
+      );
+    }
+    return;
+  }
 
   const hero_data = heroes_fetched_data[0]?.map((item) => item);
   const cur_hero = hero_data?.filter((hero) => hero.id == cur_hero_id);
