@@ -1,7 +1,7 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import { generateRandom } from "../helpers/randomInt";
 
-const API_URL = "https://akabab.github.io/superhero-api/api/ll.json";
+const API_URL = "https://akabab.github.io/superhero-api/api/all.json";
 
 export const fetchHeroes = createAsyncThunk(
   "data_slice/fetchHeroes",

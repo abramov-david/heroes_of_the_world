@@ -1,0 +1,41 @@
+.loading-container {
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+  column-gap: 2rem;
+  font-size: 1rem;
+  font-family: "montserrat";
+  margin-top: auto;
+  background-image: linear-gradient(
+    to right,
+    var(--color-blue),
+    var(--color-red)
+  );
+  color: transparent;
+  -webkit-background-clip: text;
+}
+
+.loading-container__img {
+  width: 100px;
+  border-radius: 50%;
+  animation: loadingSpinner 1s ease-out infinite;
+}
+
+.loading-container__img img {
+  width: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+@keyframes loadingSpinner {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

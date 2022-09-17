@@ -1,7 +1,10 @@
 import classes from "./Heroes.module.css";
+
 import Header from "../components/Header";
 import Footer from "../components/Footer.js";
 import Hero_card from "../components/Hero_card";
+import Loading from "../components/Loading";
+
 import { useSelector } from "react-redux";
 import errorFetch from "../assets/error/error_fetch.jpg";
 import { Link } from "react-router-dom";
