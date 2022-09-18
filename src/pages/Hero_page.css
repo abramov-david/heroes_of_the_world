@@ -53,8 +53,9 @@
 
 .hero-page__align {
   position: absolute;
-  top: 7rem;
+  top: 0rem;
   right: 5rem;
+  z-index: 9;
 }
 .hero-page__align img {
   width: 100px;

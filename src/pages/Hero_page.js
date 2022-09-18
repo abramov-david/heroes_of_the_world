@@ -18,6 +18,7 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Loading from "../components/Loading";
 import ErrorFetchPage from "../components/ErrorFetchPage";
+import Powerstats from "../components/Powerstats";
 
 import { useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
@@ -57,8 +58,6 @@ export default function Hero_page(props) {
 
   const cur_hero = heroes_fetched_data.filter((hero) => hero.id == cur_hero_id);
 
-  console.log(cur_hero[0]);
-
   let heroStatus;
 
   if (cur_hero[0].biography.alignment == "bad") {
@@ -69,7 +68,6 @@ export default function Hero_page(props) {
   }
 
   let heroPublisher;
-  console.log(cur_hero[0].biography.publisher);
   switch (cur_hero[0].biography.publisher) {
     case "Marvel Comics":
       heroPublisher = (
@@ -107,28 +105,8 @@ export default function Hero_page(props) {
       break;
   }
 
-  /*   if (cur_hero[0].biography.publisher == "Marvel Comics") {
-    heroPublisher = (
-      <img src={marvel_logo} alt="" className="hero-page__marvel-publisher" />
-    );
-  }
-  if (cur_hero[0].biography.publisher == "Dark Horse Comics") {
-    heroPublisher = (
-      <img src={dark_horse_logo} alt="" className="hero-dark-publisher" />
-    );
-  }
-  if (cur_hero[0].biography.publisher == "DC Comics") {
-    heroPublisher = (
-      <img src={dc_logo} alt="" className="hero-page__dc-publisher" />
-    );
-  }
-  if (cur_hero[0].biography.publisher == "DC Comics") {
-    heroPublisher = (
-      <img src={dc_logo} alt="" className="hero-page__dc-publisher" />
-    );
-  } */
+  const powerStats = cur_hero[0].powerstats;
 
-  console.log(heroes_fetched_data);
   return (
     <div className="hero-page">
       <Header />
@@ -162,6 +140,14 @@ export default function Hero_page(props) {
           </div>
           <div className="hero-page__align">{heroStatus}</div>
           <div className="hero-page__publisher">{heroPublisher}</div>
+          <Powerstats
+            intelligence={powerStats.intelligence}
+            combat={powerStats.combat}
+            durability={powerStats.durability}
+            power={powerStats.power}
+            speed={powerStats.speed}
+            strength={powerStats.strength}
+          />
         </div>
       </div>
       <Footer />

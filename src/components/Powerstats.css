@@ -1,0 +1,39 @@
+.powerstats-container {
+  position: absolute;
+  top: 35%;
+  right: 10rem;
+  background-color: rgba(28, 42, 88, 0.8);
+  padding: 1rem 5rem;
+  border-radius: 10px;
+  color: #fff;
+  font-family: "Montserrat";
+  font-weight: 200;
+  transform: translateX(600px);
+  animation: slideIn 1s ease-in-out forwards;
+  transition: 0.3s all;
+}
+
+.powerstats-container h2 {
+  border-bottom: 1px solid #fff;
+  margin-bottom: 1rem;
+}
+
+.powerstats-container p {
+  margin-bottom: 0.5rem;
+}
+
+.powerstats-container span {
+  font-weight: 600;
+}
+
+@keyframes slideIn {
+  0% {
+    transform: translateX(600px);
+  }
+  70% {
+    transform: translateX(-40px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}
