@@ -13,7 +13,7 @@ export const fetchHeroes = createAsyncThunk(
       }
       const data = await res.json();
 
-      const marvel_heroes = data.filter(
+      /*       const marvel_heroes = data.filter(
         (item) => item.biography.publisher == "Marvel Comics"
       );
       const dark_horse_heroes = data.filter(
@@ -27,17 +27,16 @@ export const fetchHeroes = createAsyncThunk(
         ...marvel_heroes,
         ...dark_horse_heroes,
         ...dc_heroes,
-      ];
+      ]; */
 
-      const heroesData = [];
+      /*       const heroesData = [];
 
-      for (let index = 0; index < 49; index++) {
-        const item = filtered_data[generateRandom(0, 439)];
+      for (let index = 0; index < filtered_data.length; index++) {
+        const item = filtered_data[generateRandom(0, filtered_data.length)];
         heroesData.push(item);
-      }
+      } */
 
-      const main_data = [filtered_data, heroesData];
-      return main_data;
+      return data;
     } catch (error) {
       return rejectWithValue(error.message);
     }

@@ -7,6 +7,9 @@ import bad from "../assets/hero_page/bad.png";
 import marvel_logo from "../assets/marvel_logo.png";
 import dc_logo from "../assets/dc_logo_white.png";
 import dark_horse_logo from "../assets/dark_horse_logo.png";
+import nbc_heroes from "../assets/nbcHeroes.png";
+import wildstorm from "../assets/wildstorm.png";
+import lukas from "../assets/lukas.png";
 
 import { use3dEffect } from "use-3d-effect";
 import { animated } from "react-spring";
@@ -52,34 +55,78 @@ export default function Hero_page(props) {
     return;
   }
 
-  const hero_data = heroes_fetched_data[0]?.map((item) => item);
-  const cur_hero = hero_data?.filter((hero) => hero.id == cur_hero_id);
+  const cur_hero = heroes_fetched_data.filter((hero) => hero.id == cur_hero_id);
+
+  console.log(cur_hero[0]);
 
   let heroStatus;
 
-  if (cur_hero && cur_hero[0].biography.alignment == "bad") {
+  if (cur_hero[0].biography.alignment == "bad") {
     heroStatus = <img src={bad} alt="" />;
   }
-  if (cur_hero && cur_hero[0].biography.alignment == "good") {
+  if (cur_hero[0].biography.alignment == "good") {
     heroStatus = <img src={good} alt="" />;
   }
 
   let heroPublisher;
-  if (cur_hero && cur_hero[0].biography.publisher == "Marvel Comics") {
+  console.log(cur_hero[0].biography.publisher);
+  switch (cur_hero[0].biography.publisher) {
+    case "Marvel Comics":
+      heroPublisher = (
+        <img src={marvel_logo} alt="" className="hero-page__marvel-publisher" />
+      );
+      break;
+    case "Dark Horse Comics":
+      heroPublisher = (
+        <img src={dark_horse_logo} alt="" className="hero-dark-publisher" />
+      );
+      break;
+    case "DC Comics":
+      heroPublisher = (
+        <img src={dc_logo} alt="" className="hero-page__dc-publisher" />
+      );
+      break;
+    case "NBC - Heroes":
+      heroPublisher = (
+        <img src={nbc_heroes} alt="" className="hero-page__marvel-publisher" />
+      );
+      break;
+    case "Wildstorm":
+      heroPublisher = (
+        <img src={wildstorm} alt="" className="hero-dark-publisher" />
+      );
+    case "George Lucas":
+      heroPublisher = (
+        <img src={lukas} alt="" className="hero-page__marvel-publisher" />
+      );
+      break;
+
+      break;
+
+    default:
+      break;
+  }
+
+  /*   if (cur_hero[0].biography.publisher == "Marvel Comics") {
     heroPublisher = (
       <img src={marvel_logo} alt="" className="hero-page__marvel-publisher" />
     );
   }
-  if (cur_hero && cur_hero[0].biography.publisher == "Dark Horse Comics") {
+  if (cur_hero[0].biography.publisher == "Dark Horse Comics") {
     heroPublisher = (
       <img src={dark_horse_logo} alt="" className="hero-dark-publisher" />
     );
   }
-  if (cur_hero && cur_hero[0].biography.publisher == "DC Comics") {
+  if (cur_hero[0].biography.publisher == "DC Comics") {
     heroPublisher = (
       <img src={dc_logo} alt="" className="hero-page__dc-publisher" />
     );
   }
+  if (cur_hero[0].biography.publisher == "DC Comics") {
+    heroPublisher = (
+      <img src={dc_logo} alt="" className="hero-page__dc-publisher" />
+    );
+  } */
 
   console.log(heroes_fetched_data);
   return (
@@ -88,7 +135,7 @@ export default function Hero_page(props) {
       <div className="hero-page__mainContent">
         <div className="hero-page__header">
           <img
-            src={cur_hero ? cur_hero[0].images.lg : ""}
+            src={cur_hero[0].images.lg}
             alt=""
             className="hero-page__biography--wrapper"
           />
@@ -105,13 +152,13 @@ export default function Hero_page(props) {
             {...mouseHandlers}
           >
             <img
-              src={cur_hero ? cur_hero[0].images.lg : ""}
+              src={cur_hero[0].images.lg}
               alt=""
               className="hero-page__biography__img"
             />
           </animated.div>
           <div className="hero-page__title">
-            <h1>{cur_hero ? cur_hero[0].name : ""}</h1>
+            <h1>{cur_hero[0].name}</h1>
           </div>
           <div className="hero-page__align">{heroStatus}</div>
           <div className="hero-page__publisher">{heroPublisher}</div>

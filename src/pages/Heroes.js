@@ -5,17 +5,21 @@ import Footer from "../components/Footer.js";
 import Hero_card from "../components/Hero_card";
 import Loading from "../components/Loading";
 import ErrorFetchPage from "../components/ErrorFetchPage";
+import Pagination from "../UI/Pagination";
 
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
+import { useState } from "react";
+
 export default function Heroes(props) {
+  const [active, setActive] = useState(false);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [heroesPerPage, setHeroesPerPage] = useState(49);
+
   const heroes_fetched_data = useSelector((state) => state.heroes.heroes_data);
   const loadingStatus = useSelector((state) => state.heroes.isLoading);
   const errorStatus = useSelector((state) => state.heroes.error);
-
-  console.log(heroes_fetched_data);
-  console.log(loadingStatus);
 
   if (!heroes_fetched_data.length > 0) {
     if (loadingStatus) {
@@ -39,7 +43,20 @@ export default function Heroes(props) {
     return;
   }
 
-  const heroes_cards = heroes_fetched_data[1].map((item, i) => (
+  //Get current hero
+  const indexOfTheLastHero = currentPage * heroesPerPage;
+  const indexOfTheFirstHero = indexOfTheLastHero - heroesPerPage;
+  const currentHeroes = heroes_fetched_data.slice(
+    indexOfTheFirstHero,
+    indexOfTheLastHero
+  );
+
+  //Change page
+  const paginate = (pageNumber) => {
+    setCurrentPage(pageNumber);
+  };
+
+  const heroes_cards = currentHeroes.map((item, i) => (
     <Link to={`/heroes/${item.id}`} key={item.id + Math.random()}>
       <Hero_card
         key={i}
@@ -60,7 +77,13 @@ export default function Heroes(props) {
           </ul>
         </section>
       )}
-
+      <Pagination
+        heroesPerPage={heroesPerPage}
+        totalHeroes={heroes_fetched_data.length}
+        paginate={paginate}
+        currentPage={currentPage}
+        active={active}
+      />
       <Footer />
     </div>
   );

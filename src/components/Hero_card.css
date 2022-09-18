@@ -148,3 +148,22 @@
 .hero-card__front-side--logo--dc {
   width: 40%;
 }
+
+.hero-card__front-side--logo--lukas {
+  width: 70%;
+}
+
+.hero-card__publisherText {
+  text-align: center;
+  position: absolute;
+  background-image: linear-gradient(
+    to right,
+    rgba(3, 118, 242, 1),
+    rgba(240, 20, 30, 1)
+  );
+  max-width: 80%;
+  padding: 0 0.5rem;
+  font-weight: 100;
+  border-radius: 1rem;
+  border: 2px solid #fff;
+}

@@ -1,0 +1,44 @@
+.paginateContainer {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.paginateContainer ul {
+  font-family: "Montserrat";
+  font-size: 2rem;
+  display: flex;
+  column-gap: 5px;
+  list-style: none;
+  padding: 2rem;
+  margin: 0 auto;
+  justify-content: space-between;
+  width: 30%;
+  border-radius: 1rem;
+  color: var(--color-grey);
+  font-weight: 600;
+}
+
+.paginateContainer ul li {
+  cursor: pointer;
+  transition: 0.3s all;
+}
+
+.paginateContainer ul li:hover {
+  cursor: pointer;
+  color: var(--color-blue--light);
+}
+
+.paginateContainer ul li:hover {
+  cursor: pointer;
+  color: var(--color-blue--light);
+}
+
+.activePage {
+  padding: 0.5rem 1rem;
+  border-radius: 1rem;
+  background-color: var(--color-blue--light);
+  color: #fff;
+}

@@ -57,6 +57,7 @@ a {
   --color-blue: #0376f2;
   --color-blue--light: #1c2a58;
   --color-blue--dark: #020d18;
+  --color-grey: rgba(108, 108, 108, 0.5);
 
   /* RESPONSIVE BREAKPOINTS */
   --bp-largest: 75em; /* 1200px */
