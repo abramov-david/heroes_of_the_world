@@ -22,6 +22,7 @@ import Powerstats from "../components/Powerstats";
 
 import { useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
+import HeroInfo from "../components/HeroInfo";
 
 export default function Hero_page(props) {
   const ref = React.useRef(null);
@@ -125,6 +126,7 @@ export default function Hero_page(props) {
               position: "absolute",
               top: "5px",
               left: "5px",
+              zIndex: "9",
               ...style,
             }}
             {...mouseHandlers}
@@ -148,6 +150,7 @@ export default function Hero_page(props) {
             speed={powerStats.speed}
             strength={powerStats.strength}
           />
+          <HeroInfo />
         </div>
       </div>
       <Footer />

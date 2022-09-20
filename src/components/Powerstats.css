@@ -1,8 +1,9 @@
 .powerstats-container {
   position: absolute;
-  top: 35%;
+  top: 20%;
   right: 10rem;
-  background-color: rgba(28, 42, 88, 0.8);
+  background-color: rgba(28, 42, 88, 1);
+  border: 1px solid #fff;
   padding: 1rem 5rem;
   border-radius: 10px;
   color: #fff;
@@ -11,6 +12,7 @@
   transform: translateX(600px);
   animation: slideIn 1s ease-in-out forwards;
   transition: 0.3s all;
+  z-index: 8;
 }
 
 .powerstats-container h2 {
