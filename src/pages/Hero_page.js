@@ -126,7 +126,7 @@ export default function Hero_page(props) {
               position: "absolute",
               top: "5px",
               left: "5px",
-              zIndex: "9",
+              zIndex: "8",
               ...style,
             }}
             {...mouseHandlers}

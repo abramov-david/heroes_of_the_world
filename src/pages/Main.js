@@ -11,6 +11,8 @@ import index_6 from "../assets/main_page/index_6.jpg";
 import index_7 from "../assets/main_page/index_7.jpg";
 import index_10 from "../assets/main_page/index_10.jpg";
 
+import { Link } from "react-router-dom";
+
 import { useDispatch } from "react-redux";
 import { modalActions } from "../store/modal-slice";
 
@@ -51,6 +53,9 @@ const Main = () => {
       </section>
       <section className="main__textBlock">
         <div className="title">heroes of the world</div>
+        <Link to="/heroes" className="heroes__btn">
+          Click to see all heroes without registration
+        </Link>
         <div className="login__links">
           <p onClick={modalLoginHandler}>LOGIN</p>
           <hr />

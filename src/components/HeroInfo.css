@@ -14,7 +14,7 @@
   padding: 0 5rem;
   height: 300px;
   display: flex;
-  justify-content: center;
+  justify-content: start;
   align-items: center;
   cursor: pointer;
   overflow-y: auto;
@@ -22,4 +22,25 @@
 
 .swiper-scrollbar-drag {
   background: var(--swiper-navigation-color, var(--swiper-theme-color));
+}
+
+.heroInfo__block {
+  color: #fff;
+  font-family: "Montserrat";
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+}
+
+.heroInfo__block h2 {
+  margin-bottom: 15px;
+}
+
+.heroInfo__block p {
+  margin-bottom: 10px;
+}
+
+.heroInfo__block p span {
+  font-weight: bold;
+  margin-right: 10px;
 }
