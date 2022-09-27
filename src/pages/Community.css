@@ -1,0 +1,10 @@
+.community {
+  display: flex;
+  flex-direction: column;
+  row-gap: 40px;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  font-size: 2rem;
+  font-family: "Montserrat";
+}

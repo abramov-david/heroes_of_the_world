@@ -51,6 +51,12 @@
   );
 }
 
+@media screen and (max-width: 900px) {
+  .hero-page__title {
+    font-size: 1.5rem;
+  }
+}
+
 .hero-page__align {
   position: absolute;
   top: 0rem;

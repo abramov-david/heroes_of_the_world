@@ -1,13 +1,11 @@
 .heroInfo {
   background-color: rgba(28, 42, 88, 0.8);
-  min-height: 400px;
   width: 500px;
   bottom: 0;
   left: 0;
   position: absolute;
   width: 100%;
   border-top: 1px solid #fff;
-  padding-top: 10rem;
 }
 
 .swiperSlide {

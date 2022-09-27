@@ -8,6 +8,9 @@ import { Routes, Route } from "react-router-dom";
 import Main from "./pages/Main";
 import Heroes from "./pages/Heroes";
 import Hero_page from "./pages/Hero_page";
+import Contacts from "./pages/Contacts";
+import Community from "./pages/Community";
+import Collection from "./pages/Collection";
 
 import LoginModal from "./components/LoginModal";
 import RegisterModal from "./components/RegisterModal";
@@ -47,6 +50,9 @@ function App() {
         <Route path="/" element={<Main />} />
         <Route path="/heroes" exact element={<Heroes scroll={scrollY} />} />
         <Route path="/heroes/:heroId" element={<Hero_page />}></Route>
+        <Route path="/contacts" element={<Contacts />}></Route>
+        <Route path="/community" element={<Community />}></Route>
+        <Route path="/collection" element={<Collection />}></Route>
       </Routes>
     </Fragment>
   );

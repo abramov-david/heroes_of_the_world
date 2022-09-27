@@ -39,13 +39,12 @@ export default function HeroInfo(props) {
     }
     return;
   }
-  console.log(heroes_fetched_data);
+
   const cur_hero = heroes_fetched_data.filter((hero) => hero.id == cur_hero_id);
   const hero_appearance = cur_hero[0].appearance;
   const hero_biography = cur_hero[0].biography;
   const hero_connections = cur_hero[0].connections;
   const hero_work = cur_hero[0].work;
-  console.log(hero_appearance);
 
   return (
     <div className="heroInfo">

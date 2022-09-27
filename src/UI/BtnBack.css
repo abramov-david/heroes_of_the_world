@@ -1,0 +1,14 @@
+.btnBack {
+  background-color: var(--color-blue--light);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 10px;
+  transition: 0.3s all;
+}
+
+.btnBack:hover {
+  transform: scale(1.1);
+  box-shadow: 1px 6px 12px -3px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 1px 6px 12px -3px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 1px 6px 12px -3px rgba(0, 0, 0, 0.75);
+}

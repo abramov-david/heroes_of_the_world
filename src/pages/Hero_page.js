@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React, { useEffect } from "react";
 import "./Hero_page.css";
 
 import good from "../assets/hero_page/good.png";
@@ -27,6 +27,11 @@ import HeroInfo from "../components/HeroInfo";
 export default function Hero_page(props) {
   const ref = React.useRef(null);
   const { style, ...mouseHandlers } = use3dEffect(ref);
+
+  useEffect(() => {
+    // 👇️ scroll to top on page load
+    window.scrollTo({ top: 0, left: 0 });
+  }, []);
 
   const heroes_fetched_data = useSelector((state) => state.heroes.heroes_data);
   const loadingStatus = useSelector((state) => state.heroes.isLoading);
